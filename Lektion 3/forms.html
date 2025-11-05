@@ -89,6 +89,34 @@
     <input type="search" name="search" id="search">
     <input type="submit" value="Search">
     <input type="reset" value="Reset">
+<br>
+<br>
+    <!-- Attributet disabled -->
+     <form action="">
+        First name: <input type="text" name="firstname">
+        <input type="submit" value="Add" disabled>
+     </form>
+     <hr>
+    <h2>Formulärvalidering</h2>
+    <!-- Attributet required -->
+     <form action="">
+        Quantity (between 1 and 5):
+        <input type="number" name="quantity" id="quantity" required>
+        <input type="submit" value="Send">
+     </form>
+     <br>
+      <!-- Validering - Min och Max -->
+     <form action="">
+        Quantity (between 1 and 5):
+        <input type="number" name="quantity" id="quantity" min="1" max="5" required >
+        <input type="submit" value="Send">
+     </form>
+     <!-- E-post validering -->
+     <form action="">
+        <p>Subscribe to our email list:</p>
+        <input type="email" name="email" id="email" required>
+        <input type="submit" value="Subscribe">
+     </form>
 
 </body>
 </html>
