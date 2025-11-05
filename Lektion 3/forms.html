@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Inloggningsformulär</h1>
+    <!-- Inloggningsformulär -->
+    <form action="action_page.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" size="15" maxlength="15">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" size="15" maxlength="20">
+        <br>
+        <input type="submit" value="Logga in">
+    </form>
+
+    <h1>Andra form</h1>
+    <!-- Textarea -->
+    <p>Would you like to give us a comment?</p>
+    <textarea name="comments" id="comments" cols="20" rows="10"></textarea>
+
+    <!-- Radioknappar -->
+    <p>Please select your favourite genre: <br>
+        <input type="radio" name="genre" id="genreNon" value="none" checked>
+        <label for="genreNon">None</label>
+
+        <input type="radio" name="genre" id="genreRock" value="rock" >
+        <label for="genreRock">Rock</label>
+        
+        <input type="radio" name="genre" id="genrePop" value="pop" >
+        <label for="genrePop">Pop</label>
+
+        <input type="radio" name="genre" id="genreJazz" value="jazz">
+        <label for="genreJazz">Jazz</label>
+    </p>
+</body>
+</html>
