@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aligning Form Controll</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div {
+            border-bottom: 1px solid #0034;
+            margin: 10px;
+            padding-bottom: 10px;
+            width: 300px;
+        }
+        .title {
+            float: left;
+            width: 100px;
+            display: contents;
+        }
+        .field {
+            float: right;
+            width: 200px;
+            padding-left: 10px;
+            /* display: inline; */
+        }
+        .submit {
+            text-align: right;
+            border-bottom: none;
+        }
+        #register{
+            border-radius: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <div>
+            <label for="name" class="title">Name:</label>
+            <input type="text" class="field" name="name" id="name">
+        </div>
+        <div>
+            <label for="email" class="title">Email:</label>
+            <input type="email" class="field" name="name" id="email">
+        </div>
+        <div class="radio-buttons">
+            <span class="title">Gender:</span>
+            <input type="radio" name="gender" id="male" value="m">
+            <label for="male">M</label>
+
+            <input type="radio" name="gender" id="female" value="f">
+            <label for="female">F</label>
+
+            <input type="radio" name="gender" id="none" value="none">
+            <label for="none">Vill inte ange</label>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Register" id="register">
+        </div>
+    </form>
+</body>
+</html>
