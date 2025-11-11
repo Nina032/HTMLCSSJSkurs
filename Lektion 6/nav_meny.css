@@ -42,6 +42,24 @@ html, body {
 #menu-toggle {
     display: none;
 }
+.menu-button,
+.menu-button::before,
+.menu-button::after{
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    border-radius: 2px;
+}
+.menu-button::before{
+    content: '';
+    margin-top: -8px;
+}
+.menu-button::after{
+    content: '';
+    margin-top: 8px;
+}
 
 @media (max-width: 768px) {
     .menu-button-container {
