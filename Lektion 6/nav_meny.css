@@ -25,3 +25,26 @@ html, body {
     margin: 0;
     padding: 0;
 }
+.menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+}
+.menu-button-container {
+     display: none; 
+}
+
+@media (max-width: 768px) {
+    .menu-button-container {
+     display: flex; 
+    }
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
