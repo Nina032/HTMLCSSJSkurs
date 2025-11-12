@@ -12,6 +12,16 @@ body {
     place-items: center;
     overflow: hidden;
 }
+.container {
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1,
+        -14px -14px 20px white;
+        border-radius: 20px;
+}
 .brand-logo {
     height: 100px;
     width: 100px;
@@ -21,4 +31,11 @@ body {
     border-radius: 50%;
     box-shadow: 7px 7px 10px #cbced1,
         -7px -7px 10px white;
+}
+.brand-title {
+    margin-top: 15px;
+    font-size: 1.8rem;
+    color: #1da1f2;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
