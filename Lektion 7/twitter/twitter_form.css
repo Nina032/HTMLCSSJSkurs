@@ -39,3 +39,32 @@ body {
     font-weight: 900;
     letter-spacing: 1px;
 }
+.inputs {
+    margin-top: 30px;
+    text-align: left;
+}
+label, input, button {
+    display: block;
+    border: none;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+input {
+    padding: 10px;
+    padding-left: 20px;
+    height: 45px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1,
+    inset -6px -6px 6px white;
+}
+label {
+    margin-bottom: 5px;
+}
+/* label:nth-child(2) {
+    margin-top: 20px;
+} */
+input::placeholder {
+    color: gray;
+}
