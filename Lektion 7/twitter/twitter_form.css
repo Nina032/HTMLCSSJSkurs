@@ -64,7 +64,26 @@ label {
 }
 /* label:nth-child(2) {
     margin-top: 20px;
-} */
+}  */
 input::placeholder {
     color: gray;
+}
+button {
+    background: #1da1f2;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 20px;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 1px;
+    box-shadow: 6px 6px 6px #cbced1,
+    -6px -6px 6px white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+button:hover {
+    box-shadow: none;
+}
+input {
+    caret-color: #1da1f2;
 }
