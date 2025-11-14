@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid exempel</title>
     <style>
+        
         .box1, .box2, .box3 {
             background-color: rgb(228, 182, 255);
+            padding: 5px;
         }
         .wrapper {
+            width: 800px;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 100px 100px;
-            gap: 10px;
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .box1 {
             grid-column: 2 / 4;
