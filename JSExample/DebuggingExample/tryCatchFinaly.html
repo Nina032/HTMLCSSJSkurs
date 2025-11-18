@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch Finaly</title>
+</head>
+<body>
+    <p>Please input a number between 5 and 10:</p>
+
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()" >Test Input</button>
+    <p id="message" style="color: red;"></p>
+    <script>
+        function myFunction() {
+            const message = document.getElementById("message");
+            message.innerHTML= "";
+            let number = document.getElementById("demo").value;
+            try {
+                if(number == "") throw "Empty.";
+                if(isNaN(number)) throw "Not a number.";
+                if(number>10) throw "Too high!";
+                if(number<5) throw "Too low!";
+            } catch (err) {
+                message.innerHTML = "Error: " + err;
+            }finally {
+                document.getElementById("demo").value = "";
+            }
+            
+        }
+    </script>
+</body>
+</html>
