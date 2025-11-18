@@ -13,4 +13,11 @@ newItemLast.appendChild(newtextLast);
 list.appendChild(newItemLast);
 
 //Byta färg för alla li elements att använda .cool class
+let listItems = document.querySelectorAll('li');
+for (let i = 0; i < listItems.length; i++) 
+{
+    listItems[i].className = 'cool'
+}
+
+
 //Lägga till räknare i header h2
