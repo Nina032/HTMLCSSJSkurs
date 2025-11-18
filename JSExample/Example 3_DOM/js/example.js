@@ -19,5 +19,9 @@ for (let i = 0; i < listItems.length; i++)
     listItems[i].className = 'cool'
 }
 
-
 //Lägga till räknare i header h2
+let heading = document.querySelector('h2');
+let headingText = heading.firstChild.nodeValue;
+let totalItems = listItems.length;
+let newHeading = headingText + '<span>' + totalItems + '</span>';
+heading.innerHTML = newHeading;
