@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exempel 2 Events</title>
+    <style>
+        button {
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid burlywood;
+            background-color: aqua;
+            color: rgb(85, 13, 13);
+            box-shadow: 1px 1px 2px blue;
+            border-radius: 10px;
+            padding: 3px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button type="button">Player 1: NAME</button>
+
+    <script>
+        const button = document.querySelector("button");
+
+        button.addEventListener('click', updateName);
+
+        function updateName() {
+            const name = prompt("Enter a new name");
+            button.textContent = "Player 1: " + name;
+        }
+
+    </script>
+</body>
+</html>
