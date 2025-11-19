@@ -1,4 +1,18 @@
-let target;
+let target, noteName, noteInput, textEntered;
+
+noteName = document.getElementById('noteName'); // Element som innehåller note namn
+noteInput = document.getElementById('noteInput'); //Element som tar in note från användare
+
+function writeLabel(e) {
+    //Fångar targeted element
+    target = e.target;
+
+    //Hämtar value från target (input)
+    textEntered = target.value;
+
+    //Sparar det som text innehåll i elementet h2
+    noteName.textContent = textEntered;
+}
 
 function recorderControls(e) {
     //Ett modern sätt att fånga target
@@ -21,7 +35,7 @@ function recorderControls(e) {
             break;
         //Mer case kan komma in här om vi har flera alternativ
         default:
-            alert("Default case körs")
+            // alert("Default case körs")
             break;
     }
 }
@@ -33,8 +47,11 @@ function record(target) {
 }
 function stop(target) {
     target.setAttribute('data-state','record');
+    target.textContent = 'record';
 }
 
 document.addEventListener('click', function (e){
     recorderControls(e);
 });
+
+noteInput.addEventListener('input', writeLabel);
