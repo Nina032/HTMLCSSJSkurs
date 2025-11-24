@@ -129,7 +129,7 @@ span.error {
 textarea + span.error, #bio-count {margin: 0;}
 
 /* TEXTAREA */
-#bio-count.warn b, #bio-count.error b {
+#bio-count.warn, #bio-count.error {
   border-radius: 16px;
   padding-top: 4px;
   width: 32px;
@@ -137,8 +137,8 @@ textarea + span.error, #bio-count {margin: 0;}
   display: inline-block;
   font-weight: normal;
   text-align: center;}
-.warn b {color: #ffff66; background-color: #333;}
-.error b {color: #ff9966; background-color: #000;}
+.warn {color: #ffff66; background-color: #333;}
+.error {color: #ff9966; background-color: #f6f2f2;}
 
 
 /* needed to override default style sheet of number polyfill */
