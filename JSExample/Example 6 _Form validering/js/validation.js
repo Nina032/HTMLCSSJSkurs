@@ -54,6 +54,15 @@
         }
         return valid;
     }
+    //Kontrollerar om lösenord är 8 eller mer chars
+    function validatePassword() {
+        let password = document.getElementById('password');
+        let valid = password.value.length >=8;
+        if(!valid){
+            setErrorMessage(password, 'Please make sure your password has at least 8 characters!');
+        }
+        return valid;
+    }
     
 
     //-------------------------------------------------------------------------------
