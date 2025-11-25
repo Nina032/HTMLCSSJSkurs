@@ -30,13 +30,28 @@
 
         //Utföra custom validation
         //bio
-        
+        if(!validateBio()) {
+            showErrorMessage(document.getElementById('bio'));
+            valid.bio = false;
+        }else {
+            removeErrorMessage(document.getElementById('bio'));
+        }
+
         //password
         if(!validatePassword()) {
-
+            showErrorMessage(document.getElementById('password'));
+            valid.password = false;
+        } else {
+            removeErrorMessage(document.getElementById('password'));
         }
-        //parental consent
 
+        //parental consent
+        if(!validateParentsConsent()) {
+            showErrorMessage(document.getElementById('parents-consent'));
+            valid.parentsConsent = false;
+        } else {
+            removeErrorMessage(document.getElementById('parents-consent'));
+        }
         //Kontrollera om användare kan submita formulär?
 
         for(let field in valid) {
@@ -51,8 +66,6 @@
         {
             e.preventDefault();     //Tillåter ej submit av form
         }
-
-
     });
     
     
