@@ -29,10 +29,28 @@
         }
 
         //Utföra custom validation
+        //bio
+        
+        //password
+        if(!validatePassword()) {
 
-        //Kan användare submita formulär?
+        }
+        //parental consent
 
+        //Kontrollera om användare kan submita formulär?
 
+        for(let field in valid) {
+            if(!valid[field]){
+                isFormValid = false;
+                break;
+            }
+            isFormValid = true;
+        }
+
+        if(!isFormValid)            //If isFormValid är false
+        {
+            e.preventDefault();     //Tillåter ej submit av form
+        }
 
 
     });
