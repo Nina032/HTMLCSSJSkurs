@@ -16,6 +16,25 @@
         let isValid;                                        //isValid: kontrollerar form controll
         let isFormValid;                                    //isFormValid: kontrollera hela formulär
 
+        //Utföra generiska kontroll
+        for(let i=0; i < elements.length; i++) {
+            isValid = validateRequired(elements[i] && validateTypes(elements[i]))
+            if(!isValid)
+            {
+                showErrorMessage(elements[i]);
+            } else {
+                removeErrorMessage(elements[i]);
+            }
+            valid[elements[i].id] = isValid;
+        }
+
+        //Utföra custom validation
+
+        //Kan användare submita formulär?
+
+
+
+
     });
     
     
