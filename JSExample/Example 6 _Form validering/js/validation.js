@@ -44,6 +44,17 @@
 
         return valid;
     }
+    //Kontrollera om bio är mindre än eller samma som 140 chars
+    function validateBio()
+    {
+        let bio = document.getElementById('bio');
+        let valid = bio.value.length <= 140;
+        if(!valid) {
+            setErrorMessage(bio, 'Please make sure your bio does not exceed 140 characters!');
+        }
+        return valid;
+    }
+    
 
     //-------------------------------------------------------------------------------
     //   D. Hjälp funktioner som hanterar fel meddelande
