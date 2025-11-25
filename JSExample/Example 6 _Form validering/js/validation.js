@@ -33,16 +33,18 @@
     //-------------------------------------------------------------------------------
     //   D. Hjälp funktioner som hanterar fel meddelande
     //-------------------------------------------------------------------------------
+    
     function setErrorMessage(el, message) {
-        $(el).data('errorMessage', message);
-    }
+        $(el).data('errorMessage', message);                        //Sparar error message med element (kopplar till elementet)
+    }   
     function getErrorMessage(el) {
-        return $(el).data('errorMessage') || el.title; 
+        return $(el).data('errorMessage') || el.title;              //Hämtar error message eller title av element
     }
     function showErrorMessage(el) {
-        let $el = $(el);
-        let errorContainer = $el.siblings('.error.message');
-        if(!errorContainer.length){
+        let $el = $(el);                                            //Selectar element som har fel input och ska ha felmeddelande
+        let errorContainer = $el.siblings('.error.message');        //Vilka som helst siblings som ska hålla error meddelande (om dom finns)
+        if(!errorContainer.length){                                 //Om dom saknas i HTML 
+            //Skapar <span> element som ska hålla error och lägger till det efter elementet som har fel input
             errorContainer = $('<span class="error message"></span>').insertAfter($el)
         }
         errorContainer.text(getErrorMessage(el));           //Lägger till error meddelande
@@ -50,20 +52,22 @@
     //-------------------------------------------------------------------------------
     //   E. Hjälp objekt som hanterar kontroll av typ
     //-------------------------------------------------------------------------------
+    //Kontrollerar om data är valid om inte setter error message
+    //Returnerar true om valid, false om invalid
     let validateType = {
         email: function (el) {
-            let valid = /[^@]+@[^@]+/.test(el.value);           //Enkel regex som kontrollerar om vi har ett enda @ i string
-            if(!valid)
-            {
-                setErrorMessage(el, 'Please enter a valid email!');
+            let valid = /[^@]+@[^@]+/.test(el.value);                   //Enkel regex som kontrollerar om vi har ett enda @ i string
+            if(!valid)                                                  //Om värde av valid är inte sant
+            {                               
+                setErrorMessage(el, 'Please enter a valid email!');     //Setter error meddelande
             }
-            return valid;
+            return valid;                                               //Annars returnerar valid variable(sant/falsk)
         },
         number: function (el) {
 
         },
         date: function (el) {
-            
+
         }
     };
 
