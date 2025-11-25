@@ -21,14 +21,29 @@
     
 
     //-------------------------------------------------------------------------------
-    //   B. Funktioner kallas för generiska kontroll av fält i section A
+    //   B. Funktioner kallas för generiska kontroll av fält i section A - meddelande
     //-------------------------------------------------------------------------------
    
 
     //-------------------------------------------------------------------------------
-    //   C. Funktioner kallas för custom validation av fält i section A
+    //   C. Funktioner kallas för custom validation av fält i section A - meddelande
     //-------------------------------------------------------------------------------
-   
+    //Om användare är under 13, kontrollera tt parents consent är checked
+    function validateParentsConsent() {
+        let parentsConsent = document.getElementById('parents-consent');
+        let consentContainer = document.getElementById('consent-container');
+        let valid = true;
+
+        if(consentContainer.className.indexOf('hide') === -1){      //Om checkbox visas
+            valid = parentsConsent.checked;                         //updaterar valid: är det checked eller inte
+            if(!valid)
+            {
+                setErrorMessage(parentsConsent,"You need your parent's consent!");
+            }
+        }
+
+        return valid;
+    }
 
     //-------------------------------------------------------------------------------
     //   D. Hjälp funktioner som hanterar fel meddelande
