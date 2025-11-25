@@ -64,10 +64,20 @@
             return valid;                                               //Annars returnerar valid variable(sant/falsk)
         },
         number: function (el) {
-
+            let valid = /^\d+$/.test(el.value);
+            if(!valid)
+            {
+                setErrorMessage(el, 'Please enter a valid number!');
+            }
+            return valid;
         },
         date: function (el) {
-
+            let valid = /^(\d{2}\/\d{2}\/\d{4})|(\d{4}-\d{2}-\d{2})$/.test(el.valid);
+            if(!valid)
+            {
+                setErrorMessage(el, 'Please enter a valid date!');
+            }
+            return valid;
         }
     };
 
