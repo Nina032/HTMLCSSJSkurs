@@ -37,7 +37,16 @@
 
 
     //Kontrollerar om värde matchar typen av attribute (använder objektet i slutet av skript)
-
+    function validateTypes(el) {
+        if(!el.value) return true;
+        
+        let type = $(el).data('type') || el.getAttribute('type');
+        if(typeof validateType[type] === 'function'){
+            return validateType[type](el);
+        }else {
+            return true;
+        }
+    }
     //-------------------------------------------------------------------------------
     //   C. Funktioner kallas för custom validation av fält i section A - meddelande
     //-------------------------------------------------------------------------------
