@@ -49,6 +49,10 @@
         }
         errorContainer.text(getErrorMessage(el));           //Lägger till error meddelande
     }
+    function removeErrorMessage(el) {
+        let errorContainer = $el.siblings('.error.message');
+        errorContainer.remove();
+    }
     //-------------------------------------------------------------------------------
     //   E. Hjälp objekt som hanterar kontroll av typ
     //-------------------------------------------------------------------------------
