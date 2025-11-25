@@ -33,10 +33,38 @@
     //-------------------------------------------------------------------------------
     //   D. Hjälp funktioner som hanterar fel meddelande
     //-------------------------------------------------------------------------------
-   
+    function setErrorMessage(el, message) {
+        $(el).data('errorMessage', message);
+    }
+    function getErrorMessage(el) {
+        return $(el).data('errorMessage') || el.title; 
+    }
+    function showErrorMessage(el) {
+        let $el = $(el);
+        let errorContainer = $el.siblings('.error.message');
+        if(!errorContainer.length){
+            errorContainer = $('<span class="error message"></span>').insertAfter($el)
+        }
+        errorContainer.text(getErrorMessage(el));           //Lägger till error meddelande
+    }
     //-------------------------------------------------------------------------------
     //   E. Hjälp objekt som hanterar kontroll av typ
     //-------------------------------------------------------------------------------
-   
+    let validateType = {
+        email: function (el) {
+            let valid = /[^@]+@[^@]+/.test(el.value);           //Enkel regex som kontrollerar om vi har ett enda @ i string
+            if(!valid)
+            {
+                setErrorMessage(el, 'Please enter a valid email!');
+            }
+            return valid;
+        },
+        number: function (el) {
+
+        },
+        date: function (el) {
+            
+        }
+    };
 
 }());
