@@ -24,6 +24,16 @@
     //   B. Funktioner kallas för generiska kontroll av fält i section A - meddelande
     //-------------------------------------------------------------------------------
     //Kontrollera om fält är required och att den har ett värde
+    function validateRequired(el) {
+        if(isRequired(el)) {
+            let valid = !isEmpty(el);
+            if(!valid) {
+                setErrorMessage(el, 'Field is required!');
+            }
+            return valid;
+        }
+        return true;
+    }
 
     //Kontrollerar om fält är required
     function isRequired(el) {
@@ -39,7 +49,7 @@
     //Kontrollerar om värde matchar typen av attribute (använder objektet i slutet av skript)
     function validateTypes(el) {
         if(!el.value) return true;
-        
+
         let type = $(el).data('type') || el.getAttribute('type');
         if(typeof validateType[type] === 'function'){
             return validateType[type](el);
