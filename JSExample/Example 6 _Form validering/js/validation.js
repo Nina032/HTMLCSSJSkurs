@@ -23,7 +23,20 @@
     //-------------------------------------------------------------------------------
     //   B. Funktioner kallas för generiska kontroll av fält i section A - meddelande
     //-------------------------------------------------------------------------------
-   
+    //Kontrollera om fält är required och att den har ett värde
+
+    //Kontrollerar om fält är required
+    function isRequired(el) {
+        return((typeof el.required === 'boolean') && el.required) ||
+                (typeof el.required === 'string');
+    }
+    //Kontrollerar om fältet är tom (eller om värde är samma som placeholder text)
+    function isEmpty(el) {
+        return !el.value || el.value === el.placeholder;
+    }
+
+
+    //Kontrollerar om värde matchar typen av attribute (använder objektet i slutet av skript)
 
     //-------------------------------------------------------------------------------
     //   C. Funktioner kallas för custom validation av fält i section A - meddelande
